@@ -17,8 +17,8 @@ export default function Home(){
   const isMismatched = useNetworkMismatch()
 
   // Campos a Serem Personalizados
-    const nameProjet = "BootCamp iBEED"  // Nome do seu Projeto
-    const { contract } = useContract("0xE21964C19fb32f02e474ae83b126B87E6D1C2301") // Endereço da sua Coleção
+    const nameProjet = "Mandalas from Future"  // Nome do seu Projeto
+    const { contract } = useContract("0xe51Da5853BF7aB6dd6C65cbf47054105Cded155f") // Endereço da sua Coleção
     const tokenId = 0 // Token ID que você quer liberar o Mint
   // -------------------------------
 
@@ -56,7 +56,7 @@ export default function Home(){
     setLoadingMint(true)
 
     if(!address){
-      toast.error('Conecte sua wallet')
+      toast.error('Connect wallet')
       setLoading(false)
       return
     }
@@ -65,11 +65,11 @@ export default function Home(){
     .then(function(myValue: any){
       const receipt = myValue
       totalMinted()
-      toast.success(`Parabéns você mintou seu ${titleNFT}`)
+      toast.success(`Congratulations you've Minted your NFT ${titleNFT}`)
 
     }).catch(function(error: any){
       console.log(error)
-      toast.error('Erro ao mintar este NFT')
+      toast.error('Error minting this NFT')
 
     })
     setLoadingMint(false)
@@ -124,7 +124,7 @@ export default function Home(){
                     </div> 
                   </button>
                 :
-                  <button onClick={ claim }>Mint</button>
+                  <button onClick={ claim }>Free Mint</button>
                 }
               </div>
             </div>
